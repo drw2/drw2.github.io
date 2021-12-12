@@ -1,0 +1,107 @@
+@font-face {
+    src: url("BMDOHYEON_otf.otf");
+    font-family: Dohyeon;
+  }
+:root{
+    --mainColor: #6c7b8f;
+    --pointColor: #fff;
+}
+* {
+    outline: 0;
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0px;
+    align-content: center;
+    background-color: #000;
+    position: relative;
+}
+canvas{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top:0;
+    left:0;
+    position: relative;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.dp-none{
+    display: none;
+}
+
+
+
+input{
+    all: unset;
+}
+#input{
+    font-family: Dohyeon;
+    width: 80%;
+    height: auto;
+    margin: 1px auto 0;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 20px;
+
+    color: var(--pointColor);
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    overflow: hidden;
+    border-bottom: solid 1px var(--mainColor);
+
+    position: relative;
+}
+
+.text{
+    font-family: Dohyeon;
+    color: var(--pointColor);
+    font-size: 200px;
+    line-height:180px;
+    text-align: center;
+
+}
+
+.submit{
+    color: var(--mainColor);
+    padding: 0.5rem 2rem;
+
+    border: solid 1px var(--mainColor);
+    background-color: transparent;
+
+    position: fixed;
+    bottom: 30%;
+}
+.message{
+    color: var(--mainColor);
+    padding: 0.5rem 2rem;
+    position: fixed;
+    bottom: 40%;
+    opacity: 1;
+    transition: all 0.8s ease;
+}
+
+.close{
+    width: 50px;
+    height: 50px;
+    background-image: url(ico-close.svg );
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 10%;
+    z-index: 10;
+    cursor: pointer;
+  }
