@@ -1,7 +1,4 @@
-// 카메라 세팅
-let constraints = { video: { facingMode: "user"}, audio: false};
-
-
+let constraints = { video: { facingMode: { exact: "environment" }}, audio: false};
 
 const cameraView = document.querySelector("#camera--view");
 const btnRound= document.querySelector(".btn-round");
@@ -12,72 +9,24 @@ const btnClose= document.querySelector(".close");
 const width= screen.availWidth;
 const height= screen.availHeight;
 
-// cameraStart(cameraView);
+cameraStart(cameraView);
 
 // 버튼이벤트
-// btnRound.addEventListener("click", e => {
-//     canvas.width= width;
-//     canvas.height= height;
-//     capture();
+btnRound.addEventListener("click", e => {
+    canvas.width= width;
+    canvas.height= height;
+    capture();
 
-// });
+});
 
-// btnClose.addEventListener("click", e => {
-//     const junk = document.getElementsByTagName("img");
-//     junk[0].remove();
-//     imgCapture.classList.toggle("dp-none");
-//     cameraArea.classList.toggle("dp-none");
-// });
+btnClose.addEventListener("click", e => {
+    const junk = document.getElementsByTagName("img");
+    junk[0].remove();
+    imgCapture.classList.toggle("dp-none");
+    cameraArea.classList.toggle("dp-none");
+});
 
 
-
-class App{
-    constructor(ctx, canvas){
-        this.ctx = ctx;
-        this.canvas = canvas;
-        this.canvas.width = document.body.clientWidth*8;
-        this.canvas.height = document.body.clientHeight*8;
-    }
-}
-
-class ImgBack{
-    constructor(ctx, width, height){
-        this.ctx = ctx;
-        this.width = width;
-        this.height = height;
-        this.drawImg();
-    }
-    drawImg(){
-        const imgRatio = imgData.height / imgData.width;
-        const canvasRatio = this.height/ this.width;
-
-        if (imgRatio > canvasRatio){
-            const h = this.width* imgRatio;
-            this.ctx.filter = "url(#noise)";
-            this.ctx.drawImage(imgData, 0, (this.height-h)/2, this.width, h );
-        }else if(imgRatio < canvasRatio){
-            const w = this.width * canvasRatio / imgRatio;
-            this.ctx.filter = "url(#noise)";
-            this.ctx.drawImage(imgData, (this.width-w)/2, 0, w, this.height );
-        }
-    }
-    applyBlur(){
-        this.ctx.filter = "url(#noise)";
-    }
-}
-
-let imgData = new Image();
-imgData.src = imgTempData;
-
-getImg();
-function getImg(){
-    const ctx = canvas.getContext("2d");
-    new App(ctx, canvas);
-    const imgCanvas = new ImgBack(ctx, canvas.width, canvas.height);
-    imgCanvas.applyBlur();
-
-    console.log(canvas.width);
-}
 
 
 
