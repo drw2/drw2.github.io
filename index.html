@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" user-scalable="no">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="style.css">
+    <title>최남석 | 드로잉 프로젝트2 : 자유주제</title>
+  </head>
+  <body>
+    <noscript>
+      <strong> 사이트가 정상 작동하기 위해선 자바스크립트가 필요합니다.</strong>
+    </noscript>
+
+  
+
+    <div class="wrap">
+
+
+
+        <section id="can--vas" class="content">
+          <img class="loading" id="loading" src="loading-buffering.gif">
+          <div id="modal" class="modal-small" style="display: none;">
+            <input type="text" id="inputText" class="input" placeholder="텍스트를 입력하세요.">
+            <img src="ico-check.svg" id="close" class="ico">
+          </div>
+
+          <div class="ctr">
+            <input type="range" id="resolution" name="resolution" min="4", max="60", value="10", step="any">
+            
+            <div class= "btnGroup flex-btwn">
+              <label for="pic"></label>
+              <input type="file" id="pic" name="pic" accept="image/png, image/jpeg">
+              <img src="ico-save.svg" id="savePic" class="ico">
+              <img src="ico-text.svg" id="editText" class="ico">
+              <img src="ico-change.svg" id="changeText" class="ico">
+            </div>
+          </div>
+          <canvas id="canvas"></canvas>
+        </section>
+    </div>
+
+
+
+  <script src="img1.js"></script>
+  <script src="main.js"></script>
+  </body>
