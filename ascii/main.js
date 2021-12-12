@@ -134,8 +134,8 @@ class App{
     constructor(ctx, canvas){
         this.ctx = ctx;
         this.canvas = canvas;
-        this.canvas.width = document.body.clientWidth*6;
-        this.canvas.height = document.body.clientHeight*6;
+        this.canvas.width = document.body.clientWidth*2;
+        this.canvas.height = document.body.clientHeight*2;
     }
 }
 
